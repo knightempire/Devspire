@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -200,47 +201,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="py-12 px-6 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold gradient-text mb-4">DevSpire</div>
-              <p className="text-gray-400">
-                Inspiring digital innovation through creative technology solutions.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Web Development</li>
-                <li>Mobile Apps</li>
-                <li>AI Solutions</li>
-                <li>Consulting</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Blog</li>
-                <li>Careers</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>hello@devspire.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li>Follow us on social</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 DevSpire. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
