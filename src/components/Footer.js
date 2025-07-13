@@ -5,11 +5,11 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col relative items-center justify-center border-t border-gray-800 pt-16 pb-8 md:pb-0 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32 bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)]">
+        <footer className="flex flex-col relative items-center justify-center border-t border-gray-800 pt-16 pb-8 md:pb-0 px-6 lg:px-8 w-full lg:pt-32 bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)]">
 
             <div className="absolute top-0 left-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded-full"></div>
 
-            <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
+            <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full max-w-7xl mx-auto">
 
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-start justify-start md:max-w-[200px]">
@@ -150,7 +150,7 @@ const Footer = () => {
 
             </div>
 
-            <div className="mt-8 border-t border-gray-800 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
+            <div className="mt-8 border-t border-gray-800 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full max-w-7xl mx-auto">
                 <AnimationContainer delay={0.6}>
                     <p className="text-sm text-gray-400 mt-8 md:mt-0">
                         &copy; {new Date().getFullYear()} DevSpire. All rights reserved.
@@ -179,7 +179,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center">
+            <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center w-full max-w-7xl mx-auto">
                 <TextHoverEffect text="DEVSPIRE" />
             </div>
         </footer>
