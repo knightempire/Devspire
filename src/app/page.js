@@ -192,7 +192,7 @@ export default function Home() {
             Ready to <span className="gradient-text">Transform</span> Your Ideas?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Let's work together to bring your vision to life with innovative digital solutions
+            Let&apos;s work together to bring your vision to life with innovative digital solutions
           </p>
           <button className="btn-primary px-12 py-4 rounded-full text-white font-semibold text-lg">
             Start Your Project
