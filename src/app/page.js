@@ -1,8 +1,10 @@
 'use client';
 
 
+
 import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
+import BackgroundAnimation from '../components/background/BackgroundAnimation';
 
 export default function Home() {
 
@@ -12,11 +14,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        </div>
+        <BackgroundAnimation />
 
         {/* Floating Elements */}
         <div className="absolute top-20 right-20 w-20 h-20 border border-indigo-500 rounded-lg animate-float opacity-30"></div>

@@ -1,8 +1,8 @@
 import React from "react";
-
+import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
 const CTASection = () => (
-  <section className="py-24 px-6 relative overflow-hidden">
+  <section className="py-12 px-6 relative overflow-hidden">
     {/* Animated Gradient Background Blobs */}
     <div className="pointer-events-none absolute inset-0 -z-10">
       <div className="absolute left-1/2 top-0 w-[40vw] h-[40vw] min-w-[300px] min-h-[300px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-30 rounded-full blur-3xl animate-blob1" style={{animationDelay: '0s'}}></div>
@@ -25,6 +25,13 @@ const CTASection = () => (
         </button>
       </div>
     </div>
+
+
+        <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center w-full max-w-7xl mx-auto">
+                <TextHoverEffect text="DEVSPIRE" />
+            </div>
+
+
     {/* Keyframes for custom animations */}
     <style jsx>{`
       @keyframes blob1 {
