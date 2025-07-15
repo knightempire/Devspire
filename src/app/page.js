@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Footer from '@/components/Footer';
-import Hero from '@/components/hero';
+import Footer from '../components/Footer';
+import Hero from '../components/hero';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);

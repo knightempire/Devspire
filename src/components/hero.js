@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { BlurText } from "./ui/blur-text";
-import { Button } from "./ui/button";
+
 
 const ArrowRightIcon = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLineJoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
   </svg>
 );
 
@@ -41,36 +41,8 @@ const Hero = () => {
                 </p>
             </div>
             
-            <div className="animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
-                <div className="flex items-center justify-center md:gap-x-6 mt-8">
-                    <Button asChild size="lg" className="btn-primary">
-                        <Link href="#services">
-                            Get Started
-                        </Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="hidden md:flex glass border-gray-600 text-white hover:bg-white/10">
-                        <Link href="#about">
-                            Learn More
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-            
-            <div className="animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
-                <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-gray-700/50 p-2 backdrop-blur-lg bg-gray-800/50 md:p-4 mt-12">
-                    <div className="absolute top-1/4 left-1/2 -z-10 w-3/4 h-1/4 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 blur-[10rem]"></div>
-
-                    <div className="rounded-lg lg:rounded-[24px] border p-2 border-gray-700 bg-black">
-                        <div className="w-full h-64 lg:h-96 bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg lg:rounded-[20px] flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="text-6xl mb-4">🚀</div>
-                                <div className="text-2xl font-bold text-white">Your Digital Future</div>
-                                <div className="text-gray-400">Powered by DevSpire</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
+ 
         </div>
     )
 };
