@@ -2,9 +2,13 @@
 
 
 
+
 import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
 import BackgroundAnimation from '../components/background/BackgroundAnimation';
+import Ballpit from '../components/background/Ballpit';
+import TechnologySection from '../components/TechnologySection';
+
 
 export default function Home() {
 
@@ -16,14 +20,18 @@ export default function Home() {
         {/* Background Effects */}
         <BackgroundAnimation />
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 right-20 w-20 h-20 border border-indigo-500 rounded-lg animate-float opacity-30"></div>
-        <div className="absolute bottom-20 left-20 w-16 h-16 border border-purple-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-10 w-12 h-12 border border-cyan-500 rounded-lg animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
 
         {/* Hero Component */}
+
         <Hero />
+
       </section>
+
+
+      {/* Technology Section as a component */}
+      <TechnologySection />
+
+
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative">
