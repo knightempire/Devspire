@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import AnimationContainer from "@/components/AnimationContainer"
+import AnimationContainer from "@/components/ui/AnimationContainer"
 import { Icons } from "@/components/ui/Icons"
 import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
