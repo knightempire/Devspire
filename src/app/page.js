@@ -1,7 +1,7 @@
 'use client';
 
 
-
+import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
 
 export default function Home() {
@@ -153,19 +153,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to <span className="gradient-text">Transform</span> Your Ideas?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let&apos;s work together to bring your vision to life with innovative digital solutions
-          </p>
-          <button className="btn-primary px-12 py-4 rounded-full text-white font-semibold text-lg">
-            Start Your Project
-          </button>
-        </div>
-      </section>
+      <CTASection />
 
       {/* Footer is now in layout */}
     </main>
