@@ -1,18 +1,14 @@
 'use client';
 
 
-import Footer from '../components/Footer';
+
 import Hero from '../components/hero';
-import Nav from '../components/Nav';
 
 export default function Home() {
 
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Navigation */}
-      <Nav />
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Effects */}
@@ -171,8 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer is now in layout */}
     </main>
   );
 }
