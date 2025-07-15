@@ -1,8 +1,10 @@
+
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
-
+import Navbar from './../components/navbar';
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,16 +25,7 @@ export default function Home() {
 
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 p-6">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <div className={`text-2xl font-bold gradient-text ${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`}>
-              DevSpire
-            </div>
-            <div className={`hidden md:flex space-x-8 ${isVisible ? 'animate-slideInRight' : 'opacity-0'}`}>
-              <a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a>
-              <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
-            </div>
-          </div>
+          <Navbar />
         </nav>
 
         {/* Hero Content */}
