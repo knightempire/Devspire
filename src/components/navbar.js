@@ -229,16 +229,19 @@ const Navbar = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-        };
+useEffect(() => {
+    const handleScroll = () => {
+        const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        setIsScrolled(scrollPosition > 200);
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
+
+
 
     const handleMouseEnter = (label) => {
         if (timeoutRef.current) {
@@ -474,77 +477,97 @@ const Navbar = () => {
                 }
             `}</style>
 
-            <nav
-                className={`sticky top-0 z-50 border ${isScrolled ? 'bg-white/10 backdrop-blur-lg border-white/20' : 'bg-transparent border-transparent'}`}
-                ref={dropdownRef}
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
-                        {/* Logo - Left Corner */}
-                        <div className="flex items-center flex-shrink-0">
-                            <Link href="/" className="flex items-center space-x-2 group">
-                                <Image
-                                    src="/devspire_white_logo.png"
-                                    alt="Resend Logo"
-                                    width={60} // Adjust width and height as needed
-                                    height={60}
-                                    className="h-15 w-auto transition-transform duration-200 group-hover:scale-105"
-                                />
-                                
-                            </Link>
-                        </div>
+          <nav
+  ref={dropdownRef}
+  className={`sticky top-0 z-50 border transition-all duration-300 ease-in-out ${
+    isScrolled
+      ? 'bg-white/10 backdrop-blur-lg border-white/20'
+      : 'bg-transparent border-transparent'
+  }`}
+>
+<div className="w-full px-6">
+  <div className="flex items-center justify-between h-20">
 
-                        {/* Desktop Navigation - Right Corner */}
-                        <div className="hidden lg:block ml-auto">
-                            <div className="flex items-center space-x-2">
-                                {navItems.map((item) => (
-                                    <div 
-                                        key={item.label} 
-                                        className="relative"
-                                        onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
-                                        onMouseLeave={() => item.dropdown && handleMouseLeave()}
-                                    >
-                                        {item.dropdown ? (
-                                            <button className="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20">
-                                                {item.label}
-                                                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180 text-white' : ''}`} />
-                                            </button>
-                                        ) : (
-                                            <a href={item.href} className="px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20 block">
-                                                {item.label}
-                                            </a>
-                                        )}
+      {/* Logo - Left Corner */}
+<div className="flex items-center flex-shrink-0 mr-auto">
+        <Link href="/" className="flex items-center space-x-2 group">
+         <Image
+  src="/devspire_white_logo.png"
+  alt="Logo"
+  width={130}
+  height={130}
+  className="h-40 w-auto transition-transform duration-200 group-hover:scale-105"
+/>
 
-                                        {/* Dropdown */}
-                                        {item.dropdown && item.dropdown.length > 0 && activeDropdown === item.label && (
-                                            <div 
-                                                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 overflow-x-auto border border-gray-800/40 rounded-2xl shadow-2xl transition-all duration-300 ease-out animate-slide-down backdrop-blur-md ${
-                                                    item.isMegaMenu ? 'w-[640px] max-w-[95vw]' : 'w-96 max-w-[95vw]'
-                                                } bg-[#18181b]`}
-                                                style={{ minWidth: item.isMegaMenu ? '320px' : '240px' }}
-                                            >
-                                                {/* Foreground content (clean and crisp) */}
-                                                <div className="relative z-10 p-6">
-                                                    {renderMegaMenuContent(item)}
-                                                </div>
-                                            </div>
-                                        )}
+        </Link>
+      </div>
 
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+      {/* Desktop Navigation - Right Corner */}
+      <div className="hidden lg:flex items-center space-x-2 ml-auto">
+        {navItems.map((item) => (
+          <div
+            key={item.label}
+            className="relative"
+            onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+            onMouseLeave={() => item.dropdown && handleMouseLeave()}
+          >
+            {item.dropdown ? (
+              <button className="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-lg font-medium rounded-lg hover:bg-gray-800/20">
+                {item.label}
+                <ChevronDown
+                  className={`ml-1 w-4 h-4 transition-transform duration-300 ${
+                    activeDropdown === item.label
+                      ? 'rotate-180 text-white'
+                      : ''
+                  }`}
+                />
+              </button>
+            ) : (
+              <a
+                href={item.href}
+                className="px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-lg font-medium rounded-lg hover:bg-gray-800/20 block"
+              >
+                {item.label}
+              </a>
+            )}
 
-                        {/* Mobile menu button */}
-                        <div className="lg:hidden">
-                            <button
-                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800/20"
-                            >
-                                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                            </button>
-                        </div>
-                    </div>
+            {/* Dropdown */}
+            {item.dropdown &&
+              item.dropdown.length > 0 &&
+              activeDropdown === item.label && (
+                <div
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 overflow-x-auto border border-gray-800/40 rounded-2xl shadow-2xl transition-all duration-300 ease-out animate-slide-down backdrop-blur-md ${
+                    item.isMegaMenu
+                      ? 'w-[640px] max-w-[95vw]'
+                      : 'w-96 max-w-[95vw]'
+                  } bg-[#18181b]`}
+                  style={{
+                    minWidth: item.isMegaMenu ? '320px' : '240px',
+                  }}
+                >
+                  <div className="relative z-10 p-6">
+                    {renderMegaMenuContent(item)}
+                  </div>
+                </div>
+              )}
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile menu button */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800/20"
+        >
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
+        </button>
+      </div>
+    </div>
 
                     {/* Mobile Navigation */}
                     <div className={`lg:hidden transition-all duration-300 ease-in-out ${
