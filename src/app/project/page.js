@@ -4,7 +4,13 @@ import { HeroParallax } from "../../components/ui/hero-parallax";
 
 
 export function HeroParallaxDemo() {
-  return React.createElement(HeroParallax, { products });
+  return (
+    <div className="flex flex-col">
+      <div className="flex-1">
+        <HeroParallax products={products} className="!pb-0 !mb-0" />
+      </div>
+    </div>
+  );
 
 }
 export default HeroParallaxDemo;
