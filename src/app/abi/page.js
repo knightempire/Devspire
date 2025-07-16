@@ -13,6 +13,8 @@ import SeamlessSection from '../../components/SeamlessSection';
 import AboutSection from '../../components/AboutSection';
 import { LampDemo } from './lamp';
 import { SparklesPreview } from './spark';
+import {SpotlightNewDemo} from './spotlightnew';
+import { SpotlightPreview } from './splotlight';
 
 
 export default function Home() {
@@ -45,6 +47,15 @@ export default function Home() {
 
 
       {/* Seamless Section */}
+      <SpotlightNewDemo
+        gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 100%, 1.00) 0, hsla(0, 0%, 100%, 1.00) 80%, hsla(210, 100%, 55%, 1.00) 95%, hsla(210, 100%, 45%, 0) 100%)"
+        gradientSecond="radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, 1.00) 0, hsla(0, 0%, 100%, 1.00) 80%, hsla(210, 100%, 55%, 1.00) 98%, transparent 100%)"
+        gradientThird="radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, 1.00) 0, hsla(0, 0%, 100%, 1.00) 80%, hsla(210, 100%, 45%, 1.00) 98%, transparent 100%)"
+        width={900}
+        duration={5}
+      />
+
+      <SpotlightPreview />
       <SeamlessSection />
 
 
