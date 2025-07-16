@@ -1,10 +1,6 @@
 'use client';
 
 
-
-
-
-
 import CTASection from '../../components/CTASection';
 import Hero from '../../components/hero';
 import BackgroundAnimation from '../../components/background/BackgroundAnimation';
