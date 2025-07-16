@@ -480,8 +480,8 @@ const Navbar = () => {
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
-                        {/* Logo */}
-                        <div className="flex items-center justify-start">
+                        {/* Logo - Left Corner */}
+                        <div className="flex items-center flex-shrink-0">
                             <Link href="/" className="flex items-center space-x-2 group">
                                 <Image
                                     src="/devspire_white_logo.png"
@@ -490,62 +490,50 @@ const Navbar = () => {
                                     height={60}
                                     className="h-15 w-auto transition-transform duration-200 group-hover:scale-105"
                                 />
-                                <span className="text-white text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
-                                   DevSpire
-                                </span>
+                                
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation */}
-                                                <div className="hidden lg:block">
-                                                    <div className="flex items-center space-x-2">
-                                                        {navItems.map((item) => (
-                                                            <div 
-                                                                key={item.label} 
-                                                                className="relative"
-                                                                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
-                                                                onMouseLeave={() => item.dropdown && handleMouseLeave()}
-                                                            >
-                                                                {item.dropdown ? (
-                                                                    <button className="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20">
-                                                                        {item.label}
-                                                                        <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180 text-white' : ''}`} />
-                                                                    </button>
-                                                                ) : (
-                                                                    <a href={item.href} className="px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20 block">
-                                                                        {item.label}
-                                                                    </a>
-                                                                )}
+                        {/* Desktop Navigation - Right Corner */}
+                        <div className="hidden lg:block ml-auto">
+                            <div className="flex items-center space-x-2">
+                                {navItems.map((item) => (
+                                    <div 
+                                        key={item.label} 
+                                        className="relative"
+                                        onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+                                        onMouseLeave={() => item.dropdown && handleMouseLeave()}
+                                    >
+                                        {item.dropdown ? (
+                                            <button className="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20">
+                                                {item.label}
+                                                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180 text-white' : ''}`} />
+                                            </button>
+                                        ) : (
+                                            <a href={item.href} className="px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20 block">
+                                                {item.label}
+                                            </a>
+                                        )}
 
-                                                                {/* Dropdown */}
-                                                                {item.dropdown && item.dropdown.length > 0 && activeDropdown === item.label && (
-                                                                    <div 
-                                                                        className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 overflow-x-auto border border-gray-800/40 rounded-2xl shadow-2xl transition-all duration-300 ease-out animate-slide-down backdrop-blur-md ${
-                                                                            item.isMegaMenu ? 'w-[640px] max-w-[95vw]' : 'w-96 max-w-[95vw]'
-                                                                        } bg-[#18181b]`}
-                                                                        style={{ minWidth: item.isMegaMenu ? '320px' : '240px' }}
-                                                                    >
-                                                                        {/* Foreground content (clean and crisp) */}
-                                                                        <div className="relative z-10 p-6">
-                                                                            {renderMegaMenuContent(item)}
-                                                                        </div>
-                                                                    </div>
-                                                                )}
-
-                                                            </div>
-                                                        ))}
-                                                    </div>
+                                        {/* Dropdown */}
+                                        {item.dropdown && item.dropdown.length > 0 && activeDropdown === item.label && (
+                                            <div 
+                                                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 overflow-x-auto border border-gray-800/40 rounded-2xl shadow-2xl transition-all duration-300 ease-out animate-slide-down backdrop-blur-md ${
+                                                    item.isMegaMenu ? 'w-[640px] max-w-[95vw]' : 'w-96 max-w-[95vw]'
+                                                } bg-[#18181b]`}
+                                                style={{ minWidth: item.isMegaMenu ? '320px' : '240px' }}
+                                            >
+                                                {/* Foreground content (clean and crisp) */}
+                                                <div className="relative z-10 p-6">
+                                                    {renderMegaMenuContent(item)}
                                                 </div>
+                                            </div>
+                                        )}
 
-                                                {/* Right side buttons */}
-                        {/* <div className="hidden lg:flex items-center space-x-4">
-                            <button className="px-4 py-2 text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium rounded-lg hover:bg-gray-800/20">
-                                Sign in
-                            </button>
-                            <button className="bg-white text-black px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-                                Get Started
-                            </button>
-                        </div> */}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
 
                         {/* Mobile menu button */}
                         <div className="lg:hidden">
