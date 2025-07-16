@@ -1,64 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Footer from '@/components/Footer';
+
+
+
+
+import CTASection from '../components/CTASection';
+import Hero from '../components/hero';
+import BackgroundAnimation from '../components/background/BackgroundAnimation';
+import Ballpit from '../components/background/Ballpit';
+import TechnologySection from '../components/TechnologySection';
+import Images from '../components/ui/images';
+import { Particles } from '../components/ui/particles';
+
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        </div>
+        <BackgroundAnimation />
 
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 p-6">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <div className={`text-2xl font-bold gradient-text ${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`}>
-              DevSpire
-            </div>
-            <div className={`hidden md:flex space-x-8 ${isVisible ? 'animate-slideInRight' : 'opacity-0'}`}>
-              <a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a>
-              <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
-            </div>
-          </div>
-        </nav>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <h1 className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            Inspiring Digital
-            <span className="gradient-text block">Innovation</span>
-          </h1>
-          <p className={`text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-            Transform your ideas into powerful digital solutions with our cutting-edge web services, mobile apps, and AI technologies.
-          </p>
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-            <button className="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
-              Get Started
-            </button>
-            <button className="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:bg-white hover:bg-opacity-10 transition-all">
-              View Our Work
-            </button>
-          </div>
-        </div>
+        {/* Hero Component */}
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 right-20 w-20 h-20 border border-indigo-500 rounded-lg animate-float opacity-30"></div>
-        <div className="absolute bottom-20 left-20 w-16 h-16 border border-purple-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-10 w-12 h-12 border border-cyan-500 rounded-lg animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
+        <Hero />
+
       </section>
+
+
+      {/* Technology Section as a component */}
+      <TechnologySection />
+
+
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative">
@@ -133,6 +109,33 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Seamless Section */}
+      <section id="seamless" className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="gradient-text">Seamless</span> Integration
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Effortlessly connect your digital ecosystem with our robust integration solutions. We ensure your platforms, tools, and workflows work together in harmony for maximum efficiency and innovation.
+            </p>
+          </div>
+          <div className="w-full relative mt-12">
+            <Images.connect className="w-full h-auto" />
+            <Particles
+              className="absolute inset-0"
+              quantity={150}
+              ease={80}
+              color="#e4e4e7"
+              refresh
+            />
+          </div>
+        </div>
+      </section>
+
+
+                
       {/* About Section */}
       <section id="about" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
@@ -186,22 +189,9 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to <span className="gradient-text">Transform</span> Your Ideas?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let&apos;s work together to bring your vision to life with innovative digital solutions
-          </p>
-          <button className="btn-primary px-12 py-4 rounded-full text-white font-semibold text-lg">
-            Start Your Project
-          </button>
-        </div>
-      </section>
+      <CTASection />
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer is now in layout */}
     </main>
   );
 }

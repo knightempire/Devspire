@@ -1,0 +1,16 @@
+
+
+services:
+  devspire: # Define a service named 'devspire'
+    build: . # Build the image from the Dockerfile in the current directory
+    container_name: devspire # Optional: give the container a specific name
+    ports:
+      - "3000:3000" # Map host port 3000 to container port 3000
+    restart: unless-stopped # Optional: Restart policy
+
+   
+
+networks:
+  default:
+    driver: bridge
+
