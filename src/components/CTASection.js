@@ -1,9 +1,11 @@
 import React from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
+
 const CTASection = () => (
   <section className="py-12 px-6 relative overflow-hidden">
     {/* Animated Gradient Background Blobs */}
+
     <div className="pointer-events-none absolute inset-0 -z-10">
       <div className="absolute left-1/2 top-0 w-[40vw] h-[40vw] min-w-[300px] min-h-[300px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-30 rounded-full blur-3xl animate-blob1" style={{animationDelay: '0s'}}></div>
       <div className="absolute right-1/3 bottom-0 w-[30vw] h-[30vw] min-w-[200px] min-h-[200px] bg-gradient-to-tr from-pink-500 via-cyan-500 to-indigo-500 opacity-20 rounded-full blur-2xl animate-blob2" style={{animationDelay: '1.5s'}}></div>
