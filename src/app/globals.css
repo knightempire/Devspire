@@ -24,3 +24,97 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Technologies Section Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-tech {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    opacity: 0.05;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px) rotate(90deg); 
+    opacity: 0.1;
+  }
+  50% { 
+    transform: translateY(-40px) translateX(-10px) rotate(180deg); 
+    opacity: 0.15;
+  }
+  75% { 
+    transform: translateY(-20px) translateX(10px) rotate(270deg); 
+    opacity: 0.1;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: -200% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in-up { 
+  animation: fade-in-up 0.8s ease-out forwards; 
+}
+.animate-float-tech { 
+  animation: float-tech infinite linear; 
+}
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+.animate-gradient-flow {
+  background-size: 200% 100%;
+  animation: gradient-flow 10s linear infinite;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+.animation-delay-300 { 
+  animation-delay: 300ms; 
+}
+
+/* CTASection Animations */
+@keyframes blob1 {
+  0%, 100% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-60%, 10%) scale(1.1); }
+}
+@keyframes blob2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 10%) scale(1.15); }
+}
+.animate-blob1 { animation: blob1 12s ease-in-out infinite; }
+.animate-blob2 { animation: blob2 14s ease-in-out infinite; }
+@keyframes fadein-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadein-up { animation: fadein-up 1.2s cubic-bezier(.4,0,.2,1) both; }
+.delay-150 { animation-delay: 0.15s; }
+.delay-300 { animation-delay: 0.3s; }
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 4s ease-in-out infinite;
+}
