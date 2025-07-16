@@ -45,17 +45,21 @@ export const MacbookScroll = ({
     }
   }, []);
 
-  const scaleX = useTransform(scrollYProgress, [0, 0.3], [1.2, isMobile ? 1 : 1.5]);
-  const scaleY = useTransform(scrollYProgress, [0, 0.3], [0.6, isMobile ? 1 : 1.5]);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
-  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  // Use local image from public if src is not provided
+  const imageSrc = src || "/devspire_white_logo.png";
+
+  // Delay the animation until scrollYProgress >= 0.15 (centered)
+  const scaleX = useTransform(scrollYProgress, [0.15, 0.3], [1.2, isMobile ? 1 : 1.5]);
+  const scaleY = useTransform(scrollYProgress, [0.15, 0.3], [0.6, isMobile ? 1 : 1.5]);
+  const translate = useTransform(scrollYProgress, [0.20, 1], [0, 1500]);
+  const rotate = useTransform(scrollYProgress, [0.18, 0.22, 0.3], [-28, -28, 0]);
+  const textTransform = useTransform(scrollYProgress, [0.15, 0.3], [0, 100]);
+  const textOpacity = useTransform(scrollYProgress, [0.15, 0.2], [1, 0]);
 
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80">
+      className="flex min-h-[200vh] shrink-0 scale-[0.35] ,t transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80">
       <motion.h2
         style={{
           translateY: textTransform,
@@ -70,14 +74,14 @@ export const MacbookScroll = ({
       </motion.h2>
       {/* Lid */}
       <Lid
-        src={src}
+        src={imageSrc}
         scaleX={scaleX}
         scaleY={scaleY}
         rotate={rotate}
         translate={translate} />
       {/* Base area */}
       <div
-        className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+        className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-[#0a0a0a]">
         {/* above keyboard bar */}
         <div className="relative h-10 w-full">
           <div className="absolute inset-x-0 mx-auto h-4 w-[80%] bg-[#050505]" />
@@ -95,16 +99,13 @@ export const MacbookScroll = ({
         </div>
         <Trackpad />
         <div
-          className="absolute inset-x-0 bottom-0 mx-auto h-2 w-20 rounded-tl-3xl rounded-tr-3xl bg-gradient-to-t from-[#272729] to-[#050505]" />
-        {showGradient && (
-          <div
-            className="absolute inset-x-0 bottom-0 z-50 h-40 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-black dark:via-black"></div>
-        )}
+          className="absolute inset-x-0 bottom-0 mx-auto h-2 w-20 rounded-tl-3xl rounded-tr-3xl bg-[#0a0a0a]" />
+        {/* No gradient overlay to keep background consistent */}
         {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
       </div>
     </div>
   );
-};
+}
 
 export const Lid = ({
   scaleX,

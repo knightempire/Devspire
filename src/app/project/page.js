@@ -2,8 +2,10 @@
 import React from "react";
 import { HeroParallax } from "../../components/ui/hero-parallax";
 
+
 export function HeroParallaxDemo() {
   return React.createElement(HeroParallax, { products });
+
 }
 export default HeroParallaxDemo;
 export const products = [
