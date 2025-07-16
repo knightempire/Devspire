@@ -2,9 +2,16 @@
 
 
 
+
+
 import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
 import BackgroundAnimation from '../components/background/BackgroundAnimation';
+import Ballpit from '../components/background/Ballpit';
+import TechnologySection from '../components/TechnologySection';
+import Images from '../components/ui/images';
+import { Particles } from '../components/ui/particles';
+
 
 export default function Home() {
 
@@ -16,14 +23,18 @@ export default function Home() {
         {/* Background Effects */}
         <BackgroundAnimation />
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 right-20 w-20 h-20 border border-indigo-500 rounded-lg animate-float opacity-30"></div>
-        <div className="absolute bottom-20 left-20 w-16 h-16 border border-purple-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-10 w-12 h-12 border border-cyan-500 rounded-lg animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
 
         {/* Hero Component */}
+
         <Hero />
+
       </section>
+
+
+      {/* Technology Section as a component */}
+      <TechnologySection />
+
+
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative">
@@ -98,6 +109,33 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Seamless Section */}
+      <section id="seamless" className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="gradient-text">Seamless</span> Integration
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Effortlessly connect your digital ecosystem with our robust integration solutions. We ensure your platforms, tools, and workflows work together in harmony for maximum efficiency and innovation.
+            </p>
+          </div>
+          <div className="w-full relative mt-12">
+            <Images.connect className="w-full h-auto" />
+            <Particles
+              className="absolute inset-0"
+              quantity={150}
+              ease={80}
+              color="#e4e4e7"
+              refresh
+            />
+          </div>
+        </div>
+      </section>
+
+
+                
       {/* About Section */}
       <section id="about" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
