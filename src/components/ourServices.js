@@ -1,6 +1,6 @@
 // components/Services.js
 import React from 'react';
-import styles from './style/ourServices.css';
+import './style/ourServices.css';
 
 const services = [
   {
@@ -22,14 +22,14 @@ const services = [
 
 export default function Services() {
   return (
-    <section className={styles.servicesSection}>
-      <h2 className={styles.heading}>Our Services</h2>
-      <div className={styles.cardsContainer}>
+    <section className="servicesSection">
+      <h2 className="heading">Our Services</h2>
+      <div className="cardsContainer">
         {services.map((service, idx) => (
-          <div key={idx} className={styles.card}>
-            <div className={styles.icon}>{service.icon}</div>
-            <h3 className={styles.title}>{service.title}</h3>
-            <p className={styles.description}>{service.description}</p>
+          <div key={idx} className="card">
+            <div className="icon">{service.icon}</div>
+            <h3 className="title">{service.title}</h3>
+            <p className="description">{service.description}</p>
           </div>
         ))}
       </div>
