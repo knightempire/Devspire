@@ -11,6 +11,9 @@ import { LampDemo } from './lamp';
 import { SparklesPreview } from './spark';
 import {SpotlightNewDemo} from './spotlightnew';
 import { SpotlightPreview } from './splotlight';
+import { PointerHighlightDemo } from './pointerhighkight';
+
+import MagicBento from '../../components/ui/MagicBento';
 
 
 export default function Home() {
@@ -39,8 +42,23 @@ export default function Home() {
       </section>
 
 
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+ <MagicBento 
+  textAutoHide={true}
+  enableStars={true}
+  enableSpotlight={true}
+  enableBorderGlow={true}
+  enableTilt={true}
+  enableMagnetism={true}
+  clickEffect={true}
+  spotlightRadius={300}
+  particleCount={12}
+  glowColor="132, 0, 255"
+/>
 
-
+        <PointerHighlightDemo />
+ 
+      </section>
 
       {/* Seamless Section */}
       <SpotlightNewDemo
