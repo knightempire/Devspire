@@ -15,6 +15,8 @@ import { PointerHighlightDemo } from './pointerhighkight';
 
 import MagicBento from '../../components/ui/MagicBento';
 import DarkVeil from '../../components/background/darkveli';
+import RippleGrid from '../../components/background/ripplegrid';
+
 
 
 
@@ -66,6 +68,20 @@ export default function Home() {
       <div style={{ width: '100%', height: '600px', position: 'relative' }}>
   <DarkVeil
 
+  />
+</div>
+
+
+<div style={{position: 'relative', height: '500px', overflow: 'hidden'}}>
+  <RippleGrid
+    enableRainbow={false}
+    gridColor="#ffffff"
+    rippleIntensity={0.05}
+    gridSize={10}
+    gridThickness={15}
+    mouseInteraction={true}
+    mouseInteractionRadius={1.2}
+    opacity={0.8}
   />
 </div>
 
