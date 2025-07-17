@@ -14,6 +14,8 @@ import { SpotlightPreview } from './splotlight';
 import { PointerHighlightDemo } from './pointerhighkight';
 
 import MagicBento from '../../components/ui/MagicBento';
+import DarkVeil from '../../components/background/darkveli';
+
 
 
 export default function Home() {
@@ -59,6 +61,13 @@ export default function Home() {
         <PointerHighlightDemo />
  
       </section>
+
+
+      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+  <DarkVeil
+
+  />
+</div>
 
       {/* Seamless Section */}
       <SpotlightNewDemo
