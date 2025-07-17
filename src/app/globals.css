@@ -14,6 +14,7 @@
     transform: translate(-50%, -40%) scale(1);
   }
 }
+
 @import "tailwindcss";
 
 :root {
@@ -180,4 +181,136 @@ body {
 .scroll-stack-end {
   width: 100%;
   height: 1px;
+}
+
+/* -------------------- Added Services Section Styles -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.servicesSection {
+  padding: 4rem 2rem;
+  background: #18181b;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(90deg, #60a5fa 10%, #a5b4fc 50%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 24px #2563eb33, 0 1px 1px #fff2;
+  animation: gradientMove 4s linear infinite;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  text-transform: uppercase;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: linear-gradient(135deg, #23272f 60%, #1e293b 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 340px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s, background 0.35s;
+  cursor: pointer;
+  animation: fadeInUp 0.7s cubic-bezier(.25,.8,.25,1);
+  border: 1.5px solid #23272f;
+}
+
+.card:hover {
+  transform: translateY(-14px) scale(1.045) rotate(-1deg);
+  box-shadow: 0 0 0 2px #2563eb, 0 16px 48px 0 rgba(37,99,235,0.25), 0 1.5px 16px 0 #60a5fa44;
+  background: linear-gradient(135deg, #2d3748 60%, #2563eb 100%);
+}
+
+.icon {
+  font-size: 3.1rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, #2563eb 30%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bounce 1.2s infinite;
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover .icon {
+  transform: scale(1.15) rotate(-6deg);
+  filter: drop-shadow(0 0 8px #60a5fa88);
+}
+
+.title {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.description {
+  font-size: 1.07rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.viewLink {
+  color: #fbbf24;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.viewLink:hover {
+  color: #f59e42;
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-10px);}
 }
