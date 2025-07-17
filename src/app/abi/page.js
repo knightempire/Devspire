@@ -21,10 +21,6 @@ import MacbookScrollDemo from './mac';
 import Iridescence from '../../components/background/Iridescence';
 import Hyperspeed from '../../components/background/hyperspeed';
 
-// the component will fill the height/width of its parent container, edit the CSS to change this
-// the options below are the default values
-
-
 
 export default function Home() {
 
