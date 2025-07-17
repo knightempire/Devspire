@@ -16,9 +16,9 @@ import { PointerHighlightDemo } from './pointerhighkight';
 import MagicBento from '../../components/ui/MagicBento';
 import DarkVeil from '../../components/background/darkveli';
 import RippleGrid from '../../components/background/ripplegrid';
+import MacbookScrollDemo from './mac';
 
-
-
+import Iridescence from '../../components/background/Iridescence';
 
 export default function Home() {
 
@@ -71,6 +71,15 @@ export default function Home() {
   />
 </div>
 
+<div style={{ position: 'relative', height: '500px', overflow: 'hidden' }}>
+  <Iridescence
+    color={[1, 1, 1]}
+    mouseReact={false}
+    amplitude={0.1}
+    speed={1.0}
+  />
+</div>
+
 
 <div style={{position: 'relative', height: '500px', overflow: 'hidden'}}>
   <RippleGrid
@@ -84,6 +93,8 @@ export default function Home() {
     opacity={0.8}
   />
 </div>
+
+<MacbookScrollDemo />
 
       {/* Seamless Section */}
       <SpotlightNewDemo
