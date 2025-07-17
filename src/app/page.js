@@ -1,9 +1,4 @@
 'use client';
-
-
-
-
-
 import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
 import BackgroundAnimation from '../components/background/BackgroundAnimation';
@@ -11,10 +6,9 @@ import Ballpit from '../components/background/Ballpit';
 import TechnologySection from '../components/TechnologySection';
 import Images from '../components/ui/images';
 import { Particles } from '../components/ui/particles';
-
+import  CardStack from './../components/cards/cardstack';
 
 export default function Home() {
-
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
@@ -35,7 +29,7 @@ export default function Home() {
       <TechnologySection />
 
 
-
+<CardStack/>
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
