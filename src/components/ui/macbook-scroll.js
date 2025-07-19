@@ -46,7 +46,7 @@ export const MacbookScroll = ({
   }, []);
 
   // Use local image from public if src is not provided
-  const imageSrc = src || "/devspire_white_logo.png";
+  const imageSrc =  "/devspire_white_logo.png";
 
   // Delay the animation until scrollYProgress >= 0.15 (centered)
   const scaleX = useTransform(scrollYProgress, [0.15, 0.3], [1.2, isMobile ? 1 : 1.5]);
@@ -146,7 +146,7 @@ export const Lid = ({
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         <img
           src={src}
-          alt="aceternity logo"
+          alt=""
           className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top" />
       </motion.div>
     </div>

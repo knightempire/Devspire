@@ -55,11 +55,7 @@ export function MacbookScrollDemo() {
         React.createElement('br'),
         'No kidding.'
       ),
-      badge: React.createElement(
-        'a',
-        { href: 'https://peerlist.io/manuarora' },
-        React.createElement(Badge, { className: 'h-10 w-10 transform -rotate-12' })
-      ),
+     
       src: '/linear.webp',
       showGradient: false
     })

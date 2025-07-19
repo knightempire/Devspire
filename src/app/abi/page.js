@@ -11,6 +11,15 @@ import { LampDemo } from './lamp';
 import { SparklesPreview } from './spark';
 import {SpotlightNewDemo} from './spotlightnew';
 import { SpotlightPreview } from './splotlight';
+import { PointerHighlightDemo } from './pointerhighkight';
+
+import MagicBento from '../../components/ui/MagicBento';
+import DarkVeil from '../../components/background/darkveli';
+import RippleGrid from '../../components/background/ripplegrid';
+import MacbookScrollDemo from './mac';
+
+import Iridescence from '../../components/background/Iridescence';
+import Hyperspeed from '../../components/background/hyperspeed';
 
 
 export default function Home() {
@@ -39,8 +48,59 @@ export default function Home() {
       </section>
 
 
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+ <MagicBento 
+  textAutoHide={true}
+  enableStars={true}
+  enableSpotlight={true}
+  enableBorderGlow={true}
+  enableTilt={true}
+  enableMagnetism={true}
+  clickEffect={true}
+  spotlightRadius={300}
+  particleCount={12}
+  glowColor="132, 0, 255"
+/>
+
+        <PointerHighlightDemo />
+ 
+      </section>
 
 
+      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+  <DarkVeil
+
+  />
+</div>
+
+<div style={{ position: 'relative', height: '500px', overflow: 'hidden' }}>
+  <Iridescence
+    color={[1, 1, 1]}
+    mouseReact={false}
+    amplitude={0.1}
+    speed={1.0}
+  />
+</div>
+
+
+<div style={{position: 'relative', height: '500px', overflow: 'hidden'}}>
+  <RippleGrid
+    enableRainbow={false}
+    gridColor="#ffffff"
+    rippleIntensity={0.05}
+    gridSize={10}
+    gridThickness={15}
+    mouseInteraction={true}
+    mouseInteractionRadius={1.2}
+    opacity={0.8}
+  />
+</div>
+
+<div style={{position: 'relative', height: '500px', overflow: 'hidden'}}>
+      <Hyperspeed />
+    </div>
+
+<MacbookScrollDemo />
 
       {/* Seamless Section */}
       <SpotlightNewDemo
