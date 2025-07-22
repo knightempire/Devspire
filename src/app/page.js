@@ -1,4 +1,5 @@
 'use client';
+import Services from '../components/ourServices';
 import CTASection from '../components/CTASection';
 import Hero from '../components/hero';
 import BackgroundAnimation from '../components/background/BackgroundAnimation';
@@ -7,7 +8,7 @@ import TechnologySection from '../components/TechnologySection';
 import Images from '../components/ui/images';
 import { Particles } from '../components/ui/particles';
 import  CardStack from './../components/cards/cardstack';
-import Services from '../components/ourServices';
+
 
 export default function Home() {
 
