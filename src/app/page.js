@@ -32,7 +32,9 @@ export default function Home() {
 
 <CardStack/>
       {/* Services Section */}
-      <Services />
+      <section id="services" className="py-20 px-6 relative">
+        <Services />
+      </section>
 
 
       {/* Seamless Section */}
