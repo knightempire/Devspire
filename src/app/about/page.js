@@ -120,7 +120,7 @@ export default function About() {
                 <span className="text-3xl font-bold text-white">Our Vision</span>
               </div>
               <p className="text-xl text-gray-200 mb-8 font-normal">
-                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world's most pressing challenges.
+                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world`&apos;`s most pressing challenges.
               </p>
               <p className="text-xl text-gray-200 font-normal">
                 We aim to be recognized globally for our expertise in AI, machine learning, and full-stack development while maintaining our core values of innovation and excellence.
@@ -239,12 +239,12 @@ export default function About() {
                 Get In <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Ready to start your next project? Let's discuss how we can help bring your vision to life.
+                Ready to start your next project? Let`&apos;`s discuss how we can help bring your vision to life.
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-8">Let's Talk</h3>
+                <h3 className="text-2xl font-bold text-white mb-8">Let`&apos;`s Talk</h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-center space-x-4">
