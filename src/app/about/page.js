@@ -3,7 +3,66 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+
+// SVG ICONS (replacing lucide-react)
+const MailIcon = (props) => (
+  <svg
+    width={props.size || 24}
+    height={props.size || 24}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <polyline points="3 7 12 13 21 7" />
+  </svg>
+);
+
+const PhoneIcon = (props) => (
+  <svg
+    width={props.size || 24}
+    height={props.size || 24}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.28 1.61.46 2.38a2 2 0 0 1-.45 2L8.09 10.91a16 16 0 0 0 6.17 6.17l1.81-1.81a2 2 0 0 1 2-.45c.77.18 1.57.33 2.38.46a2 2 0 0 1 1.72 2z" />
+  </svg>
+);
+
+const MapPinIcon = (props) => (
+  <svg
+    width={props.size || 24}
+    height={props.size || 24}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path d="M12 21c-6-5.5-8-8.5-8-11a8 8 0 1 1 16 0c0 2.5-2 5.5-8 11z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+const SendIcon = (props) => (
+  <svg
+    width={props.size || 24}
+    height={props.size || 24}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <line x1="22" y1="2" x2="11" y2="13" />
+    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+  </svg>
+);
 
 export default function About() {
   // Animations
@@ -21,7 +80,6 @@ export default function About() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can implement your own submit logic here
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
   const handleChange = (e) => {
@@ -30,9 +88,9 @@ export default function About() {
 
   // Contact Info
   const contactInfo = [
-    { icon: Mail, title: 'Email', value: 'devspire.in@gmail.com', link: 'mailto:devspire.in@gmail.com' },
-    { icon: Phone, title: 'Phone', value: '+91 9486409058', link: 'tel:+919486409058' },
-    { icon: MapPin, title: 'Location', value: 'India', link: '#' }
+    { icon: MailIcon, title: 'Email', value: 'devspire.in@gmail.com', link: 'mailto:devspire.in@gmail.com' },
+    { icon: PhoneIcon, title: 'Phone', value: '+91 9486409058', link: 'tel:+919486409058' },
+    { icon: MapPinIcon, title: 'Location', value: 'India', link: '#' }
   ];
 
   return (
@@ -41,7 +99,8 @@ export default function About() {
         <title>About Us | DevSpire</title>
         <meta name="description" content="Discover DevSpire's mission, vision, team, and values. Learn about our journey, core principles, and how you can connect or join our innovative digital company." />
       </Head>
-      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-x-hidden">
+      {/* Remove overflow-x-hidden from main to prevent extra horizontal scroll bar. */}
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative">
         {/* Animated Gradient Blobs / Particles */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-24 left-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-30 animate-blob"></div>
@@ -79,7 +138,7 @@ export default function About() {
             </p>
             <div className={`flex justify-center transition-all duration-700 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <a href="#contact" className="btn-hero-contact group">
-                <Mail className="w-6 h-6 mr-2 group-hover:animate-wiggle" />
+                <MailIcon className="w-6 h-6 mr-2 group-hover:animate-wiggle" />
                 <span className="font-semibold tracking-wide">Get in Touch</span>
               </a>
             </div>
@@ -120,7 +179,7 @@ export default function About() {
                 <span className="text-3xl font-bold text-white">Our Vision</span>
               </div>
               <p className="text-xl text-gray-200 mb-8 font-normal">
-                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world`&apos;`s most pressing challenges.
+                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world&apos;s most pressing challenges.
               </p>
               <p className="text-xl text-gray-200 font-normal">
                 We aim to be recognized globally for our expertise in AI, machine learning, and full-stack development while maintaining our core values of innovation and excellence.
@@ -239,12 +298,12 @@ export default function About() {
                 Get In <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Ready to start your next project? Let`&apos;`s discuss how we can help bring your vision to life.
+                Ready to start your next project? Let&apos;s discuss how we can help bring your vision to life.
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-8">Let`&apos;`s Talk</h3>
+                <h3 className="text-2xl font-bold text-white mb-8">Let&apos;s Talk</h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-center space-x-4">
@@ -353,7 +412,7 @@ export default function About() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
                   >
-                    <Send className="w-5 h-5" />
+                    <SendIcon className="w-5 h-5" />
                     <span>Send Message</span>
                   </button>
                 </form>
@@ -363,11 +422,13 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        
         <Footer />
 
         {/* Custom Animations & Styles */}
         <style jsx global>{`
+          body {
+            overflow-x: hidden;
+          }
           .gradient-text {
             background: linear-gradient(90deg, #6366f1 0%, #60a5fa 60%, #a78bfa 100%);
             color: transparent;
