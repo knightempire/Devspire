@@ -21,6 +21,7 @@ export default function About() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
+    // You can implement your own submit logic here
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
   const handleChange = (e) => {
@@ -40,8 +41,7 @@ export default function About() {
         <title>About Us | DevSpire</title>
         <meta name="description" content="Discover DevSpire's mission, vision, team, and values. Learn about our journey, core principles, and how you can connect or join our innovative digital company." />
       </Head>
-      {/* Remove overflow-x-hidden from <main>, add to global styles instead */}
-      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative">
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-x-hidden">
         {/* Animated Gradient Blobs / Particles */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-24 left-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-30 animate-blob"></div>
@@ -120,7 +120,7 @@ export default function About() {
                 <span className="text-3xl font-bold text-white">Our Vision</span>
               </div>
               <p className="text-xl text-gray-200 mb-8 font-normal">
-                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world&apos;s most pressing challenges.
+                To become the leading technology partner for businesses seeking digital transformation. We envision a future where innovative technology seamlessly integrates with human creativity to solve the world`&apos;`s most pressing challenges.
               </p>
               <p className="text-xl text-gray-200 font-normal">
                 We aim to be recognized globally for our expertise in AI, machine learning, and full-stack development while maintaining our core values of innovation and excellence.
@@ -239,12 +239,12 @@ export default function About() {
                 Get In <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Ready to start your next project? Let&apos;s discuss how we can help bring your vision to life.
+                Ready to start your next project? Let`&apos;`s discuss how we can help bring your vision to life.
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-8">Let&apos;s Talk</h3>
+                <h3 className="text-2xl font-bold text-white mb-8">Let`&apos;`s Talk</h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-center space-x-4">
@@ -363,13 +363,11 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
+        
         <Footer />
 
         {/* Custom Animations & Styles */}
         <style jsx global>{`
-          html, body {
-            overflow-x: hidden !important;
-          }
           .gradient-text {
             background: linear-gradient(90deg, #6366f1 0%, #60a5fa 60%, #a78bfa 100%);
             color: transparent;
