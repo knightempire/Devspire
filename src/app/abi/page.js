@@ -20,7 +20,7 @@ import MacbookScrollDemo from './mac';
 
 import Iridescence from '../../components/background/Iridescence';
 import Hyperspeed from '../../components/background/hyperspeed';
-
+import IconCloudDemo from '../../components/technologysectionspin';
 
 export default function Home() {
 
@@ -47,6 +47,9 @@ export default function Home() {
 
       </section>
 
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <IconCloudDemo />
+      </section>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
  <MagicBento 
